@@ -18,8 +18,10 @@ struct StatementDetailView: View {
                     Text("Due Date")
                 }
                 
-                Section() {
+                Section("More details") {
+                    Text("Last Amount Paid")
                     Text("Previous balance")
+                    Button("Show PDF") {}
                 }
             }
             .navigationTitle("View Statement")

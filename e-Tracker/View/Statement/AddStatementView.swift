@@ -46,6 +46,9 @@ struct AddStatementView: View {
 //                            .focused($onFocus)
                     }
                 }
+                Section("Additional info") {
+                    Button("Attach PDF") {}
+                }
             }
             .navigationTitle("New Statement")
             .navigationBarTitleDisplayMode(.inline)

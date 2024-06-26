@@ -23,7 +23,9 @@ struct LastMonthStatementsView: View {
             List {
                 Section("Previous dues") {
                     ForEach(pastStatements) { statement in
-                        StatementRowView(statement: statement)
+                        NavigationLink(destination:StatementDetailView()) {
+                            StatementRowView(statement: statement)
+                        }
                     }
                 }
             }

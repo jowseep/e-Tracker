@@ -24,11 +24,13 @@ struct StatementView: View {
             List {
                 Section("Upcoming dues") {
                     ForEach(statements) { statement in
-                        StatementRowView(statement: statement)
-                            .swipeActions(edge: .trailing) {
-                                Button("Delete", systemImage: "trash") {}
-                                    .tint(.red)
-                            }
+                        NavigationLink(destination: StatementDetailView()) {
+                            StatementRowView(statement: statement)
+                                .swipeActions(edge: .trailing) {
+                                    Button("Delete", systemImage: "trash") {}
+                                        .tint(.red)
+                                }
+                        }
                     }
                 }
             }
