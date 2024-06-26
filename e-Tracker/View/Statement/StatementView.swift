@@ -15,7 +15,6 @@ struct StatementView: View {
         Statement(id: 4, card: Card(id: 4, issuer: "UnionBank", paymentProcessor: "Visa", lastFourDigits: "7943"), dueDate: "June 26,  2024", amountDue: 824.50),
         Statement(id: 5, card: Card(id: 5, issuer: "RCBC", paymentProcessor: "Visa", lastFourDigits: "1001"), dueDate: "June 21, 2024", amountDue: 3124.21),
         Statement(id: 6, card: Card(id: 6, issuer: "Eastwest", paymentProcessor: "JCB", lastFourDigits: "4000"), dueDate: "June 26, 2024", amountDue: 1924.45)
-        
     ]
     
     @State private var showAddStatementView = false
