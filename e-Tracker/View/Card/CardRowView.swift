@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CardRowView: View {
-    var cards: Card
+    @Environment(\.modelContext) var modelContext
+    @Bindable var card: Card
     
     var body: some View {
         HStack {
-            Image(getLogo(bank: cards.issuer))
+            Image(getLogo(bank: card.issuer))
                 .resizable()
                 .frame(width: 40, height: 40)
                 .cornerRadius(4)
             VStack(alignment: .leading) {
-                Text(cards.lastFourDigits)
+                Text(card.lastFourDigits)
                     .font(.headline)
-                Text(cards.paymentProcessor)
+                Text(card.processor)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
@@ -46,8 +48,15 @@ struct CardRowView: View {
         }
 }
 
-let card = Card(id: 2, issuer: "BDO", paymentProcessor: "Visa", lastFourDigits: "5522")
-
 #Preview {
-    CardRowView(cards: card)
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Card.self, configurations: config)
+        let example = Card(issuer: "BDO", processor: "Visa", lastFourDigits: "5522", statements: [])
+        
+        return CardRowView(card: example)
+            .modelContainer(container)
+    } catch {
+        fatalError("Failed to load")
+    }
 }

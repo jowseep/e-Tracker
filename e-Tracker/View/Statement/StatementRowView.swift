@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct StatementRowView: View {
-    var statement: Statement
+    @Environment(\.modelContext) var modelContext
+    @Bindable var statement: Statement
     
     var body: some View {
         HStack {
@@ -17,9 +19,9 @@ struct StatementRowView: View {
                 .frame(width: 40, height: 40)
                 .cornerRadius(4)
             VStack(alignment: .leading) {
-                Text(statement.card.paymentProcessor + " " + statement.card.lastFourDigits)
+                Text(statement.card.processor)
                     .font(.headline)
-                Text(statement.dueDate)
+                Text(statement.dueDate, style: .date)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
@@ -47,8 +49,15 @@ struct StatementRowView: View {
         }
 }
 
-let sampleStatement = Statement(id: 1, card: Card(id: 3, issuer: "BPI", paymentProcessor: "Visa", lastFourDigits: "8366"), dueDate: "06/26/2024", amountDue: 1500.00)
-
 #Preview {
-    StatementRowView(statement: sampleStatement)
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: Statement.self, configurations: config)
+        let example = Statement(card: Card(issuer: "BDO", processor: "Visa", lastFourDigits: "5522", statements: []), amountDue: 1209.45, minAmountDue: 230, dueDate: Date(), isPaid: false)
+        
+        return StatementRowView(statement: example)
+            .modelContainer(container)
+    } catch {
+        fatalError("Failed to load.")
+    }
 }

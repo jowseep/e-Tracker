@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CardDetailView: View {
-    var statement: Statement = Statement(id: 2, card: Card(id: 2, issuer: "BDO", paymentProcessor: "Amex", lastFourDigits: "0738"), dueDate: "June 21, 2024", amountDue: 3124.21)
+    //@Bindable var statement: Statement
     
     var body: some View {
         NavigationStack {
@@ -19,9 +20,9 @@ struct CardDetailView: View {
                     Text("Payment Processor")
                 }
                 
-                Section("Current Statement") {
-                    StatementRowView(statement: statement)
-                }
+//                Section("Current Statement") {
+//                    StatementRowView(statement: statement)
+//                }
             }
             .navigationTitle("View Statement")
             .navigationBarTitleDisplayMode(.inline)
@@ -30,5 +31,15 @@ struct CardDetailView: View {
 }
 
 #Preview {
+//    do {
+//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+//        let container = try ModelContainer(for: Statement.self, configurations: config)
+//        let example = Statement(card: Card(issuer: "BDO", processor: "Visa", lastFourDigits: "5522", statements: []), amountDue: 1209.45, minAmountDue: 230, dueDate: Date(), isPaid: false)
+//        
+//        return CardDetailView(statement: example)
+//            .modelContainer(container)
+//    } catch {
+//        fatalError("Failed to load.")
+//    }
     CardDetailView()
 }

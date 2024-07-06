@@ -14,15 +14,17 @@
 		910CA8A82C0E1A140027307B /* e_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910CA8A72C0E1A140027307B /* e_TrackerTests.swift */; };
 		910CA8B22C0E1A140027307B /* e_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910CA8B12C0E1A140027307B /* e_TrackerUITests.swift */; };
 		910CA8B42C0E1A140027307B /* e_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910CA8B32C0E1A140027307B /* e_TrackerUITestsLaunchTests.swift */; };
-		9176AF472C2475B2004AFE12 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF462C2475B2004AFE12 /* Card.swift */; };
 		9176AF4A2C272FE0004AFE12 /* StatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF492C272FE0004AFE12 /* StatementView.swift */; };
 		9176AF4C2C2735A5004AFE12 /* LastMonthStatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF4B2C2735A5004AFE12 /* LastMonthStatementView.swift */; };
 		9176AF4E2C27367F004AFE12 /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF4D2C27367F004AFE12 /* CardsView.swift */; };
 		9176AF502C2943F7004AFE12 /* CardRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF4F2C2943F7004AFE12 /* CardRowView.swift */; };
 		9176AF532C2948D7004AFE12 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF522C2948D7004AFE12 /* CardDetailView.swift */; };
+		9176AF562C2C7177004AFE12 /* StatementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF552C2C7177004AFE12 /* StatementDetailView.swift */; };
+		9176AF5A2C2DB851004AFE12 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF592C2DB851004AFE12 /* AddCardView.swift */; };
+		9176AF642C398286004AFE12 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF632C398286004AFE12 /* Card.swift */; };
+		9176AF662C39832D004AFE12 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176AF652C39832D004AFE12 /* Statement.swift */; };
 		91D360612C1EE6DF00E78FFC /* StatementRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D360602C1EE6DF00E78FFC /* StatementRowView.swift */; };
 		91D360632C20279300E78FFC /* AddStatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D360622C20279300E78FFC /* AddStatementView.swift */; };
-		91DE41122C1A03E900A2B9D8 /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DE41112C1A03E900A2B9D8 /* Statement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,15 +55,17 @@
 		910CA8AD2C0E1A140027307B /* e-TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "e-TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		910CA8B12C0E1A140027307B /* e_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_TrackerUITests.swift; sourceTree = "<group>"; };
 		910CA8B32C0E1A140027307B /* e_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9176AF462C2475B2004AFE12 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9176AF492C272FE0004AFE12 /* StatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementView.swift; sourceTree = "<group>"; };
 		9176AF4B2C2735A5004AFE12 /* LastMonthStatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastMonthStatementView.swift; sourceTree = "<group>"; };
 		9176AF4D2C27367F004AFE12 /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
 		9176AF4F2C2943F7004AFE12 /* CardRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRowView.swift; sourceTree = "<group>"; };
 		9176AF522C2948D7004AFE12 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		9176AF552C2C7177004AFE12 /* StatementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailView.swift; sourceTree = "<group>"; };
+		9176AF592C2DB851004AFE12 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		9176AF632C398286004AFE12 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		9176AF652C39832D004AFE12 /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 		91D360602C1EE6DF00E78FFC /* StatementRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementRowView.swift; sourceTree = "<group>"; };
 		91D360622C20279300E78FFC /* AddStatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementView.swift; sourceTree = "<group>"; };
-		91DE41112C1A03E900A2B9D8 /* Statement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +116,11 @@
 		910CA8952C0E1A120027307B /* e-Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				9176AF602C393518004AFE12 /* Helper */,
 				910CA8962C0E1A120027307B /* e_TrackerApp.swift */,
 				910CA8982C0E1A120027307B /* ContentView.swift */,
 				91D3605F2C1EE6A000E78FFC /* View */,
-				910CA8CB2C10BF210027307B /* Data */,
+				910CA8CB2C10BF210027307B /* Model */,
 				910CA89A2C0E1A140027307B /* Assets.xcassets */,
 				910CA89C2C0E1A140027307B /* Preview Content */,
 			);
@@ -147,13 +152,13 @@
 			path = "e-TrackerUITests";
 			sourceTree = "<group>";
 		};
-		910CA8CB2C10BF210027307B /* Data */ = {
+		910CA8CB2C10BF210027307B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				91DE41112C1A03E900A2B9D8 /* Statement.swift */,
-				9176AF462C2475B2004AFE12 /* Card.swift */,
+				9176AF632C398286004AFE12 /* Card.swift */,
+				9176AF652C39832D004AFE12 /* Statement.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9176AF512C294888004AFE12 /* Card */ = {
@@ -162,6 +167,7 @@
 				9176AF4F2C2943F7004AFE12 /* CardRowView.swift */,
 				9176AF4D2C27367F004AFE12 /* CardsView.swift */,
 				9176AF522C2948D7004AFE12 /* CardDetailView.swift */,
+				9176AF592C2DB851004AFE12 /* AddCardView.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -170,11 +176,19 @@
 			isa = PBXGroup;
 			children = (
 				9176AF4B2C2735A5004AFE12 /* LastMonthStatementView.swift */,
+				9176AF552C2C7177004AFE12 /* StatementDetailView.swift */,
 				9176AF492C272FE0004AFE12 /* StatementView.swift */,
 				91D360602C1EE6DF00E78FFC /* StatementRowView.swift */,
 				91D360622C20279300E78FFC /* AddStatementView.swift */,
 			);
 			path = Statement;
+			sourceTree = "<group>";
+		};
+		9176AF602C393518004AFE12 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		91D3605F2C1EE6A000E78FFC /* View */ = {
@@ -319,12 +333,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91DE41122C1A03E900A2B9D8 /* Statement.swift in Sources */,
 				9176AF502C2943F7004AFE12 /* CardRowView.swift in Sources */,
-				9176AF472C2475B2004AFE12 /* Card.swift in Sources */,
+				9176AF562C2C7177004AFE12 /* StatementDetailView.swift in Sources */,
 				910CA8992C0E1A120027307B /* ContentView.swift in Sources */,
 				9176AF4E2C27367F004AFE12 /* CardsView.swift in Sources */,
+				9176AF642C398286004AFE12 /* Card.swift in Sources */,
 				91D360612C1EE6DF00E78FFC /* StatementRowView.swift in Sources */,
+				9176AF662C39832D004AFE12 /* Statement.swift in Sources */,
+				9176AF5A2C2DB851004AFE12 /* AddCardView.swift in Sources */,
 				9176AF4A2C272FE0004AFE12 /* StatementView.swift in Sources */,
 				9176AF532C2948D7004AFE12 /* CardDetailView.swift in Sources */,
 				910CA8972C0E1A120027307B /* e_TrackerApp.swift in Sources */,

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="class">
+        <attribute name="cardNo" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="issuer" attributeType="String"/>
+        <attribute name="paymentProcessor" attributeType="String"/>
+        <relationship name="statement" toMany="YES" deletionRule="Nullify" destinationEntity="Statement" inverseName="card" inverseEntity="Statement"/>
+    </entity>
+    <entity name="Statement" representedClassName="Statement" syncable="YES" codeGenerationType="class">
+        <attribute name="amountDue" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="dueDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPaid" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="minAmountDue" attributeType="Decimal" defaultValueString="0.0"/>
+        <relationship name="card" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="statement" inverseEntity="Card"/>
+    </entity>
+</model>
