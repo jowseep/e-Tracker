@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.modelContext) var modelContext
-    
     var body: some View {
         TabView {
-            StatementView()
+            StatementListView()
                 .tabItem {
                     Image(systemName: "arrow.down.doc")
                     Text("Statement")
                 }
             
-            LastMonthStatementsView()
+            LastMonthStatementsListView()
                 .tabItem {
                     Image(systemName: "arrow.clockwise")
                     Text("Last Month")
                 }
             
-            CardsView()
+            CardsListView()
                 .tabItem {
                     Image(systemName: "creditcard")
                     Text("Cards")
@@ -34,5 +32,8 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    let preview = PreviewContainer()
+    
+    return ContentView()
+        .modelContainer(preview.container)
 }

@@ -10,15 +10,14 @@ import SwiftData
 
 @Model
 final class Card {
-    var issuer: String
-    var processor: String
+    var issuer: Issuer
+    var processor: Processor
     @Attribute(.unique) var lastFourDigits: String
-    @Relationship(deleteRule: .cascade, inverse: \Statement.card) var statements = [Statement]()
+    @Relationship(deleteRule: .cascade) var statements = [Statement]()
     
-    init(issuer: String, processor: String, lastFourDigits: String, statements: [Statement]) {
+    init(issuer: Issuer, processor: Processor, lastFourDigits: String) {
         self.issuer = issuer
         self.processor = processor
         self.lastFourDigits = lastFourDigits
-        self.statements = statements
     }
 }

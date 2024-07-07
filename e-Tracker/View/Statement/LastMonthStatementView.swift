@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct LastMonthStatementsView: View {
+struct LastMonthStatementsListView: View {
     @Environment(\.modelContext) var modelContext
     @Query var pastStatements: [Statement]
     @State private var showAddStatementView = false
@@ -39,5 +39,8 @@ struct LastMonthStatementsView: View {
 }
 
 #Preview {
-    LastMonthStatementsView()
+    let preview = PreviewContainer(Statement.self)
+    preview.addData(Statement.sampleStatement)
+    return LastMonthStatementsListView()
+        .modelContainer(preview.container)
 }

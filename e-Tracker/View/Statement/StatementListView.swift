@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct StatementView: View {
+struct StatementListView: View {
     @Environment(\.modelContext) var modelContext
     @Query var statements: [Statement]
     @State private var showAddStatementView = false
@@ -48,5 +48,8 @@ struct StatementView: View {
 }
 
 #Preview {
-    StatementView()
+    let preview = PreviewContainer(Statement.self)
+    preview.addData(Statement.sampleStatement)
+    return StatementListView()
+        .modelContainer(preview.container)
 }

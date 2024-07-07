@@ -10,14 +10,13 @@ import SwiftData
 
 @Model
 final class Statement {
-    var card: Card
-    var amountDue: Double
-    var minAmountDue: Double
+    @Relationship(inverse: \Card.statements) var card: Card
+    var amountDue: Decimal
+    var minAmountDue: Decimal
     var dueDate: Date
     var isPaid: Bool
-    var pdf: Data?
     
-    init(card: Card, amountDue: Double, minAmountDue: Double, dueDate: Date, isPaid: Bool, pdf: Data? = nil) {
+    init(card: Card, amountDue: Decimal, minAmountDue: Decimal, dueDate: Date, isPaid: Bool) {
         self.card = card
         self.amountDue = amountDue
         self.minAmountDue = minAmountDue

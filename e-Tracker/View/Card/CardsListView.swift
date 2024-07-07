@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct CardsView: View {
+struct CardsListView: View {
     @Environment(\.modelContext) var modelContext
     @Query var cards: [Card]
     @State private var showAddCardView = false
@@ -42,5 +42,8 @@ struct CardsView: View {
 }
 
 #Preview {
-    CardsView()
+    let preview = PreviewContainer(Card.self)
+    preview.addData(Card.sampleCards)
+    return CardsListView()
+        .modelContainer(preview.container)
 }
