@@ -12,13 +12,13 @@ struct ContentView: View {
         TabView {
             StatementListView()
                 .tabItem {
-                    Image(systemName: "arrow.down.doc")
+                    Image(systemName: "doc")
                     Text("Statement")
                 }
             
             LastMonthStatementsListView()
                 .tabItem {
-                    Image(systemName: "arrow.clockwise")
+                    Image(systemName: "calendar")
                     Text("Last Month")
                 }
             
@@ -32,8 +32,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    let preview = PreviewContainer()
-    
-    return ContentView()
-        .modelContainer(preview.container)
+    ContentView()
+        .modelContainer(for: [Statement.self, Card.self], inMemory: true)
 }

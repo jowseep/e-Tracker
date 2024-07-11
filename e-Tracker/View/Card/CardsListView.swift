@@ -15,11 +15,23 @@ struct CardsListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                Section("Active cards") {
-                    ForEach(cards) { card in
-                        NavigationLink(destination: CardDetailView()) {
-                            CardRowView(card: card)
+            Group {
+                if cards.isEmpty {
+                    ContentUnavailableView("No cards added yet. Click + button to add.", systemImage: "creditcard")
+                } else {
+                    List {
+                        Section("Active cards") {
+                            ForEach(cards) { card in
+                                NavigationLink(destination: CardDetailView()) {
+                                    CardRowView(card: card)
+                                        .swipeActions(edge: .trailing) {
+                                            Button("Delete", systemImage: "trash")   {
+                                                modelContext.delete(card)
+                                            }
+                                                .tint(.red)
+                                        }
+                                }
+                            }
                         }
                     }
                 }

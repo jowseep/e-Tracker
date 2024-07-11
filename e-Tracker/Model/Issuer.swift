@@ -8,9 +8,9 @@
 import Foundation
 
 enum Issuer: String, CaseIterable, Codable {
-    case bdo = "bdo"
-    case bpi = "bpi"
-    case rcbc = "rcbc"
-    case ub = "ub"
-    case ew = "ew"
+    case bdo = "BDO"
+    case bpi = "BPI"
+    case rcbc = "RCBC"
+    case ub = "UnionBank"
+    case ew = "Eastwest"
 }

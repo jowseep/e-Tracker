@@ -15,11 +15,17 @@ struct LastMonthStatementsListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                Section("Previous dues") {
-                    ForEach(pastStatements) { statement in
-                        NavigationLink(destination:StatementDetailView()) {
-                            StatementRowView(statement: statement)
+            Group {
+                if pastStatements.isEmpty {
+                    ContentUnavailableView("Past statements currently unavailable.", systemImage: "doc")
+                } else {
+                    List {
+                        Section("Previous dues") {
+                            ForEach(pastStatements) { statement in
+                                NavigationLink(destination:StatementDetailView()) {
+                                    StatementRowView(statement: statement)
+                                }
+                            }
                         }
                     }
                 }

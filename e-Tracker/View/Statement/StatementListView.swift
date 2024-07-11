@@ -15,17 +15,23 @@ struct StatementListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                Section("Upcoming dues") {
-                    ForEach(statements) { statement in
-                        NavigationLink(destination: StatementDetailView()) {
-                            StatementRowView(statement: statement)
-                                .swipeActions(edge: .trailing) {
-                                    Button("Mark Paid", systemImage: "checkmark") {}
-                                        .tint(.green)
-                                    Button("Delete", systemImage: "trash")   {}
-                                        .tint(.red)
+            Group {
+                if statements.isEmpty {
+                    ContentUnavailableView("Hooray! No upcoming dues for today.", systemImage: "doc")
+                } else {
+                    List {
+                        Section("Upcoming dues") {
+                            ForEach(statements) { statement in
+                                NavigationLink(destination: StatementDetailView()) {
+                                    StatementRowView(statement: statement)
+                                        .swipeActions(edge: .trailing) {
+                                            Button("Mark Paid", systemImage: "checkmark") {}
+                                                .tint(.green)
+                                            Button("Delete", systemImage: "trash")   {}
+                                                .tint(.red)
+                                        }
                                 }
+                            }
                         }
                     }
                 }

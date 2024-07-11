@@ -13,10 +13,7 @@ struct e_TrackerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: [
-                    Statement.self,
-                    Card.self
-                ])
+                .modelContainer(for: [Statement.self, Card.self])
         }
     }
 }

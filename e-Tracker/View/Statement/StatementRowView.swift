@@ -18,7 +18,7 @@ struct StatementRowView: View {
                 .frame(width: 40, height: 40)
                 .cornerRadius(4)
             VStack(alignment: .leading) {
-                Text(statement.card.processor.rawValue)
+                Text(statement.card.processor.rawValue + " " + statement.card.lastFourDigits)
                     .font(.headline)
                 Text(statement.dueDate, style: .date)
                     .font(.subheadline)

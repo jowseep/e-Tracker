@@ -29,7 +29,7 @@
 		91D360612C1EE6DF00E78FFC /* StatementRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D360602C1EE6DF00E78FFC /* StatementRowView.swift */; };
 		91D360632C20279300E78FFC /* AddStatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D360622C20279300E78FFC /* AddStatementView.swift */; };
 		91D4A4042C3AEC8500747848 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D4A4032C3AEC8400747848 /* SampleData.swift */; };
-		91D4A4062C3AEEA800747848 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D4A4052C3AEEA800747848 /* PreviewContainer.swift */; };
+		91D4A4082C402DAD00747848 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D4A4072C402DAD00747848 /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 		91D360602C1EE6DF00E78FFC /* StatementRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementRowView.swift; sourceTree = "<group>"; };
 		91D360622C20279300E78FFC /* AddStatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementView.swift; sourceTree = "<group>"; };
 		91D4A4032C3AEC8400747848 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
-		91D4A4052C3AEEA800747848 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		91D4A4072C402DAD00747848 /* PreviewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,12 +126,12 @@
 		910CA8952C0E1A120027307B /* e-Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				9176AF602C393518004AFE12 /* Helper */,
 				910CA8962C0E1A120027307B /* e_TrackerApp.swift */,
 				910CA8982C0E1A120027307B /* ContentView.swift */,
 				91D3605F2C1EE6A000E78FFC /* View */,
 				910CA8CB2C10BF210027307B /* Model */,
 				910CA89A2C0E1A140027307B /* Assets.xcassets */,
+				9176AF602C393518004AFE12 /* Helper */,
 				910CA89C2C0E1A140027307B /* Preview Content */,
 			);
 			path = "e-Tracker";
@@ -141,8 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				910CA89D2C0E1A140027307B /* Preview Assets.xcassets */,
+				91D4A4072C402DAD00747848 /* PreviewContainer.swift */,
 				91D4A4032C3AEC8400747848 /* SampleData.swift */,
-				91D4A4052C3AEEA800747848 /* PreviewContainer.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D4A4062C3AEEA800747848 /* PreviewContainer.swift in Sources */,
+				91D4A4082C402DAD00747848 /* PreviewContainer.swift in Sources */,
 				9176AF502C2943F7004AFE12 /* CardRowView.swift in Sources */,
 				9176AF562C2C7177004AFE12 /* StatementDetailView.swift in Sources */,
 				91C6E7E92C3A875F002A30B5 /* Issuer.swift in Sources */,
