@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddStatementView: View {
     
-    private var cards: [String] = [
-        "BDO 5526",
-        "BPI 8366",
-        "RCBC 1001",
-        "UnionBank 7943",
-        "Eastwest 4000"
-    ]
+//    private var cards: [String] = [
+//        "BDO 5526",
+//        "BPI 8366",
+//        "RCBC 1001",
+//        "UnionBank 7943",
+//        "Eastwest 4000"
+//    ]
+    
+    @Query var cards: [Card]
     
     @Environment(\.presentationMode) var presentationMode
     @FocusState private var onFocus: Bool
@@ -28,9 +31,15 @@ struct AddStatementView: View {
         NavigationStack {
             Form {
                 Section("Statement information") {
-                    Picker("Card", selection: $selectedBank) {
-                        ForEach(0..<cards.count, id: \.self) { bank in
-                            Text(cards[bank])
+                    if (cards.isEmpty) {
+                        Text("No cards available")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Picker("Card", selection: $selectedBank) {
+                            ForEach(0..<cards.count, id: \.self) { bank in
+                                let card = cards[bank]
+                                Text(card.issuer.rawValue + " " + card.lastFourDigits)
+                            }
                         }
                     }
                     TextField("Amount Due", text: $name)

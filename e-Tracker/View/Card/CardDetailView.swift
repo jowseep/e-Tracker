@@ -9,15 +9,30 @@ import SwiftUI
 import SwiftData
 
 struct CardDetailView: View {
-    //@Bindable var statement: Statement
+    var card: Card
     
     var body: some View {
         NavigationStack {
             Form {
                 Section("Card details") {
-                    Text("Card")
-                    Text("Issuing Bank")
-                    Text("Payment Processor")
+                    HStack {
+                        Text("Bank")
+                        Spacer()
+                        Text(card.issuer.rawValue)
+                            .foregroundStyle(.secondary)
+                    }
+                    HStack {
+                        Text("Processor")
+                        Spacer()
+                        Text(card.processor.rawValue)
+                            .foregroundStyle(.secondary)
+                    }
+                    HStack {
+                        Text("Last 4 digits")
+                        Spacer()
+                        Text(card.lastFourDigits)
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 
 //                Section("Current Statement") {
@@ -30,16 +45,8 @@ struct CardDetailView: View {
     }
 }
 
+var card = Card(issuer: Issuer.bdo, processor: Processor.visa, lastFourDigits: "5522")
+
 #Preview {
-//    do {
-//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-//        let container = try ModelContainer(for: Statement.self, configurations: config)
-//        let example = Statement(card: Card(issuer: "BDO", processor: "Visa", lastFourDigits: "5522", statements: []), amountDue: 1209.45, minAmountDue: 230, dueDate: Date(), isPaid: false)
-//        
-//        return CardDetailView(statement: example)
-//            .modelContainer(container)
-//    } catch {
-//        fatalError("Failed to load.")
-//    }
-    CardDetailView()
+    CardDetailView(card: card)
 }

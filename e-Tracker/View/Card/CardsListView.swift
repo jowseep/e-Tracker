@@ -22,7 +22,7 @@ struct CardsListView: View {
                     List {
                         Section("Active cards") {
                             ForEach(cards) { card in
-                                NavigationLink(destination: CardDetailView()) {
+                                NavigationLink(destination: CardDetailView(card: card)) {
                                     CardRowView(card: card)
                                         .swipeActions(edge: .trailing) {
                                             Button("Delete", systemImage: "trash")   {
