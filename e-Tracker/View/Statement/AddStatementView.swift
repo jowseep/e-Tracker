@@ -9,21 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct AddStatementView: View {
-    
-//    private var cards: [String] = [
-//        "BDO 5526",
-//        "BPI 8366",
-//        "RCBC 1001",
-//        "UnionBank 7943",
-//        "Eastwest 4000"
-//    ]
-    
     @Query var cards: [Card]
-    
     @Environment(\.presentationMode) var presentationMode
     @FocusState private var onFocus: Bool
     @State private var name = ""
-    @State private var selectedBank = ""
+    @State var selectedCard: Int = 0
     @State private var notes = ""
     @State private var dueDate: Date = Date()
     
@@ -35,28 +25,29 @@ struct AddStatementView: View {
                         Text("No cards available")
                             .foregroundStyle(.secondary)
                     } else {
-                        Picker("Card", selection: $selectedBank) {
+                        Picker("Card", selection: $selectedCard) {
                             ForEach(0..<cards.count, id: \.self) { bank in
                                 let card = cards[bank]
                                 Text(card.issuer.rawValue + " " + card.lastFourDigits)
+                                    .tag(bank)
                             }
                         }
                     }
                     TextField("Amount Due", text: $name)
                     TextField("Minimum Amount Due", text: $name)
                     DatePicker("Due Date", selection: $dueDate, displayedComponents: [.date])
-                    ZStack {
-                        if notes.isEmpty {
-                            Text("Notes here")
+                    Button("Attach PDF") {}
+                }
+                Section("Notes") {
+                    ZStack(alignment: .topLeading) {
+                        if notes.isEmpty && !onFocus {
+                            Text("Start typing...")
                                 .foregroundColor(.gray)
                         }
                         TextEditor(text: $notes)
-                            .frame(height: 150)
-//                            .focused($onFocus)
+                            .frame(height: 120)
+                            .focused($onFocus)
                     }
-                }
-                Section("Additional info") {
-                    Button("Attach PDF") {}
                 }
             }
             .navigationTitle("New Statement")
@@ -70,9 +61,6 @@ struct AddStatementView: View {
                     }
                 }
             }
-//            .onTapGesture {
-//                onFocus = false
-//            }
         }
     }
 }
